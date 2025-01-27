@@ -58,7 +58,7 @@ EMOJIOS = [
     "🕊",
 ]
 
-BOT = "https://envs.sh/vLi.jpg"
+BOT = "https://envs.sh/ahC.jpg"
 IMG = [
     "https://telegra.ph/file/010c936d41e9da782780f.jpg",
     "https://telegra.ph/file/e17740f22da1fe4162e43.jpg",
@@ -154,7 +154,7 @@ async def welcomejej(client, message: Message):
                 count = await client.get_chat_members_count(chat.id)
                 username = chat.username if chat.username else "𝐏ʀɪᴠᴀᴛᴇ 𝐆ʀᴏᴜᴘ"
                 msg = (
-                    f"**📝𝐌ᴜsɪᴄ 𝐁ᴏᴛ 𝐀ᴅᴅᴇᴅ 𝐈ɴ 𝐀 #𝐍ᴇᴡ_𝐆ʀᴏᴜᴘ**\n\n"
+                    f"**📝 𝐁ᴏᴛ 𝐀ᴅᴅᴇᴅ 𝐈ɴ 𝐀 #𝐍ᴇᴡ_𝐆ʀᴏᴜᴘ**\n\n"
                     f"**📌𝐂ʜᴀᴛ 𝐍ᴀᴍᴇ:** {chat.title}\n"
                     f"**🍂𝐂ʜᴀᴛ 𝐈ᴅ:** `{chat.id}`\n"
                     f"**🔐𝐂ʜᴀᴛ 𝐔sᴇʀɴᴀᴍᴇ:** @{username}\n"
@@ -274,7 +274,7 @@ async def start(client: Client, m: Message):
         )
         
         animation_steps = [
-            "🖤.......", ".🖤......", "..🖤.....", "...🖤....", "....🖤...", ".....🖤..", "......🖤.", ".......🖤", "🖤ᴄʜᴧᴍᴘᴜ🖤"
+            "🖤.......", ".🖤......", "..🖤.....", "...🖤....", "....🖤...", ".....🖤..", "......🖤.", ".......🖤", "🖤ʏᴏ ᴍʏsᴛᴇʀɪᴏᴜs ™🖤"
         ]
 
         for step in animation_steps:
@@ -364,7 +364,7 @@ async def ping(client: Client, message: Message):
 
     ms = (datetime.now() - start).microseconds / 1000
     await loda.edit_text(
-        text=f"нey вαву!!\n{(await client.get_me()).mention} ᴄʜᴀᴛʙᴏᴛ ιѕ alιve  αnd worĸιng ғιne wιтн a pιng oғ\n\n**➥** `{ms}` ms\n**➲ ᴄᴘᴜ:** {CPU}\n**➲ ʀᴀᴍ:** {RAM}\n**➲ ᴅɪsᴋ:** {DISK}\n**➲ ᴜᴘᴛɪᴍᴇ »** {UP}\n\n<b>||**⋆ʟᴏᴠᴇ ᴡɪᴛʜ⋆ [  ꯭꯭↬꯭ᬃ꯭ ⃪꯭ ꯭⁢⁣⁤⁣⁣⁢⁣⁤⁢⁤⁣⁢⁤⁣⁤᪳᪳🇷꯭𝚰𝛅꯭꯭ʜ꯭֟፝፝֟ᴜ ꯭꯭༗꯭»꯭݅݅݅݅𓆪 ](https://t.me/{OWNER_USERNAME}) **||</b>",
+        text=f"нey вαву!!\n{(await client.get_me()).mention} ᴄʜᴀᴛʙᴏᴛ ιѕ alιve  αnd worĸιng ғιne wιтн a pιng oғ\n\n**➥** `{ms}` ms\n**➲ ᴄᴘᴜ:** {CPU}\n**➲ ʀᴀᴍ:** {RAM}\n**➲ ᴅɪsᴋ:** {DISK}\n**➲ ᴜᴘᴛɪᴍᴇ »** {UP}\n\n<b>||**⋆ʟᴏᴠᴇ ᴡɪᴛʜ⋆ [ʏᴏ ᴍʏsᴛᴇʀɪᴏᴜs ™](https://t.me/{OWNER_USERNAME}) **||</b>",
         reply_markup=InlineKeyboardMarkup(PNG_BTN),
     )
     if message.chat.type == ChatType.PRIVATE:
