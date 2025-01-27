@@ -307,6 +307,10 @@ owner_id = await get_clone_owner(bot_id)
 if not owner_id:
     print("Owner ID not found. Please check database.")
     return
+owner_id = await get_clone_owner(bot_id)
+if not owner_id:
+    print("Owner ID not found. Please check database.")
+    return
 
 try:
     print(f"Sending photo to owner_id: {owner_id}")
@@ -324,15 +328,15 @@ try:
     )
 except Exception as e:
     print(f"Error sending photo to owner: {e}")
-        
-    else:
-        await m.reply_photo(
-            photo=random.choice(IMG),
-            caption=GSTART.format(m.from_user.mention or "can't mention"),
-            reply_markup=InlineKeyboardMarkup(HELP_START),
-        )
-        await add_served_cchat(bot_id, m.chat.id)
-        await add_served_chat(m.chat.id)
+
+# Yeh block try-except ke bahar hona chahiye
+await m.reply_photo(
+    photo=random.choice(IMG),
+    caption=GSTART.format(m.from_user.mention or "can't mention"),
+    reply_markup=InlineKeyboardMarkup(HELP_START),
+)
+await add_served_cchat(bot_id, m.chat.id)
+await add_served_chat(m.chat.id)
 
 @Client.on_message(filters.command("help"))
 async def help(client: Client, m: Message):
