@@ -303,20 +303,24 @@ async def start(client: Client, m: Message):
         await add_served_user(m.chat.id)
         keyboard = InlineKeyboardMarkup([[InlineKeyboardButton(f"{m.chat.first_name}", user_id=m.chat.id)]])
 
- print(f"Sending photo to owner_id: {owner_id}")
-
-        owner_id = await get_clone_owner(bot_id)
+owner_id = await get_clone_owner(bot_id)
 if not owner_id:
     print("Owner ID not found. Please check database.")
     return
-   
-        owner_id = await get_clone_owner(bot_id) 
-        if owner_id:
-            try:
+
+try:
+    print(f"Sending photo to owner_id: {owner_id}")
     await client.send_photo(
-    int(owner_id),
-    photo=chat_photo,
-    caption=f"{m.from_user.mention} ʜᴀs sᴛᴀʀᴛᴇᴅ ʙᴏᴛ. \n\n**ɴᴀᴍᴇ :** {m.chat.first_name}\n**ᴜsᴇʀɴᴀᴍᴇ :** @{m.chat.username}\n**ɪᴅ :** {m.chat.id}\n\n**ᴛᴏᴛᴀʟ ᴜsᴇʀs :** {users}"
+        int(owner_id),
+        photo=chat_photo,
+        caption=f"{m.from_user.mention} ʜᴀs sᴛᴀʀᴛᴇᴅ ʙᴏᴛ. \n\n"
+                f"**ɴᴀᴍᴇ :** {m.chat.first_name}\n"
+                f"**ᴜsᴇʀɴᴀᴍᴇ :** @{m.chat.username}\n"
+                f"**ɪᴅ :** {m.chat.id}\n\n"
+                f"**ᴛᴏᴛᴀʟ ᴜsᴇʀs :** {users}",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton(f"{m.chat.first_name}", user_id=m.chat.id)]]
+        )
     )
 except Exception as e:
     print(f"Error sending photo to owner: {e}")
